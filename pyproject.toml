@@ -1,0 +1,37 @@
+[project]
+
+name = "kelctl"
+version = "0.1.4"
+description = "A library for controlling the KEL103 electronic load"  # Optional
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "MIT License"}
+keywords = ["KEL103", "library", "development"]
+classifiers = [
+
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [
+  "aenum"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/vorbeiei/kelctl"
+"Bug Reports" = "https://github.com/vorbeiei/kelctl/issues"
+"Source" = "https://github.com/vorbeiei/kelctl"
+
+[tool.setuptools]
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
