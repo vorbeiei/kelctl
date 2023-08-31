@@ -1,6 +1,6 @@
 [project]
 
-name = "kelctl"
+name = "py_kelctl"
 version = "0.2.0"
 description = "A library for controlling the KEL103 electronic load"  # Optional
 readme = "README.md"
