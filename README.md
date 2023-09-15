@@ -7,6 +7,9 @@ The minimum required python version required is 3.10.
 
 This library has been initially copied from the [py-korad-serial project](https://github.com/starforgelabs/py-korad-serial) and been modified to work with the electronic loads instead of power supplies.
 
+## Python package
+
+The library is available as a package at PyPI as [py-kelctl](https://pypi.org/project/py-kelctl/).
 
 ## Hardware
 The [ Korad KEL103/KEL102 ](https://www.koradtechnology.com/product/81.html) is sold under different names and brands i.e. RND 320-KEL103.
