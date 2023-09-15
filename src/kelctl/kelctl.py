@@ -499,7 +499,7 @@ class KELSerial(object):
         return float_or_none(batt_time)
 
     def get_batt_cap(self):
-        batt_cap = self.__serial.send_receive("BATT:CAP?").replace("AH", "")
+        batt_cap = self.__serial.send_receive(":BATT:CAP?").replace("AH", "")
         return float_or_none(batt_cap)
 
     def get_dynamic_mode(self):
