@@ -170,10 +170,10 @@ class KELSerial(object):
 
             return self.read_string(line_number)
 
-    def __init__(self, port, rate=115200, debug=False):
+    def __init__(self, port, rate: BaudRate = 115200, debug=False):
         super(KELSerial, self).__init__()
 
-        self.__serial = KELSerial.Serial(port, rate, debug)
+        self.__serial = KELSerial.Serial(port, rate.b, debug)
 
         # Memory recall/save buttons 1 through 100 -> mapped to memories 0 to 99
         self.memories = [

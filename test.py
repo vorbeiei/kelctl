@@ -6,7 +6,7 @@ import time
 
 from src.kelctl import *
 
-with KELSerial('/dev/ttyACM0', 115200, True) as load:
+with KELSerial('/dev/ttyACM0', BaudRate.R115200, True) as load:
     print("Model: ", load.model)
     m1 = load.memories[0]
     m1.recall()

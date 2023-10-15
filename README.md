@@ -34,10 +34,11 @@ with KELSerial('/dev/ttyACM0') as load:
 
 ## `KELSerial` Class
 
-### Constructor `__init__(port, debug=False)`
+### Constructor `__init__(port, rate, debug=False)`
 
 The constructor takes a string containing the serial device to attach to.
-If `debug` is set to `True`, then data sent and received is printed to output.
+Rate determines the Baudrate to run at. Optional, defaults to 115200 and takes an [BaudRate](#baudrate-class) Enum value.
+If `debug` is set to `True`, then data sent and received is printed to output. Optional and defaults to `False`.
 ___
 
 ### `input` Attribute
