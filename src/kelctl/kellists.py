@@ -136,7 +136,7 @@ class BattList(object):
     def validate(self):
         if 1 > self.save_slot > 10:
             raise ValueError("save-slot can only be from 1-10")
-        if self.discharge_current >= self.current_range:
+        if self.discharge_current > self.current_range:
             raise ValueError("discharge current has to be lower or same as current range")
 
 
