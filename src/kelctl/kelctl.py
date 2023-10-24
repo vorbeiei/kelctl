@@ -22,7 +22,7 @@ This library has been initially copied from the py-korad-serial project(https://
 
 """
 
-# from time import sleep
+from time import sleep
 from .kellists import *
 from .kelenums import *
 from .kelerrors import *
@@ -160,10 +160,11 @@ class KELSerial(object):
         def send(self, text):
             if self.debug:
                 print("_send: ", text)
-            # sleep(0.1) # may be needed, needs testing
 
             text = "%s\n" % text
             self.port.write(text.encode('ascii'))
+
+            sleep(0.1)  # may be needed, needs testing
 
         def send_receive(self, text, line_number=1):
             self.send(text)
