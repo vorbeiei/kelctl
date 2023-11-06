@@ -206,7 +206,7 @@ ___
 
 ### `set_ocp` function
 
-Sets and saves an OCP-list and if set recalls the list on device. Recall option defaults to true if not used. Takes a [OCPList object](#opplist-class) as input and will validate the list before setting it to prevent errors on device. Will raise a ValueError or [ValueOutOfLimitError](#valueoutoflimiterror-class) on failed validation.
+Sets and saves an OCP-list and if set recalls the list on device. Recall option defaults to true if not used. Takes a [OCPList object](#ocplist-class) as input and will validate the list before setting it to prevent errors on device. Will raise a ValueError or [ValueOutOfLimitError](#valueoutoflimiterror-class) on failed validation.
 ```
 ocpList = OCPList(1, 10, 4, 20, 15, 1, 1, 5, 30, 10.52, 8.34)
 load.set_ocp(ocpList)
@@ -215,9 +215,9 @@ ___
 
 ### `get_ocp` function
 
-Recalls and then retrieves selected OCP-list by save-slot and returns [OCPList object](#opplist-class). Will raise ValueError if trying to get invalid list(valid is 1-10).
+Recalls and then retrieves selected OCP-list by save-slot and returns [OCPList object](#ocplist-class). Will raise ValueError if trying to get invalid list(valid is 1-10).
 
-`load.get_ocp(1)` returns [OCPList](#opplist-class)
+`load.get_ocp(1)` returns [OCPList](#ocplist-class)
 ___
 
 ### `recall_ocp` function
