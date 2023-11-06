@@ -504,7 +504,7 @@ ___
 ## `ListStep` class
 
 The ListStep class represents a single step from a LoadList class.
-It consists of the following values: current(in Amps, float), current_slope(rate at which current will change to defined value in A/uS, float), duration(duration of this step in seconds, float)
+It consists of the following values: **current**(in Amps, float), **current_slope**(rate at which current will change to defined value in A/uS, float), **duration**(duration of this step in seconds, float)
 
 `step = ListStep(3, 0.002, 5)`
 ___
@@ -515,7 +515,7 @@ The LoadList class represents all values required for using the list function of
 
 It consists of the following values: 
 
-save-slot(in which save-slot 1-7 the list will be saved in, int), current_range(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), steps(an array of ListStep objects), loop_number(how often the steps will be repeated, int)
+**save-slot**(in which save-slot 1-7 the list will be saved in, int), **current_range**(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), **steps**(an array of ListStep objects), **loop_number**(how often the steps will be repeated, int)
 ```
 steps = [ListStep(3, 0.002, 5), ListStep(2, 0.003, 3), ListStep(2, 0.005, 2)]
 testlist = LoadList(3, 10, steps, 6)
@@ -540,7 +540,7 @@ The OCPList class represents all values required for using the OCP function of t
 
 It consists of the following values: 
 
-save-slot(in which save-slot 1-10 the list will be saved in, int), on_voltage(voltage above which test will start in Volts, float), on_delay(delay in seconds after reaching on_voltage after which test starts, float), current_range(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), initial_current(current at which test starts out in Amps, float), step_current(current value in Amps which each step will go down by, float), step_delay(delay in seconds after each step before next step down, float), off_current(current in Amps below which test will stop, float), ocp_voltage(value in Volts above voltage has to rise for successful test, float), max_overcurrent(max current value in Amps at which OCP has to disengage at for successful test, float), min_overcurrent(min current value in Amps at which OCP has to disengage at for successful test, float)
+**save-slot**(in which save-slot 1-10 the list will be saved in, int), **on_voltage**(voltage above which test will start in Volts, float), **on_delay**(delay in seconds after reaching on_voltage after which test starts, float), **current_range**(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), **initial_current**(current at which test starts out in Amps, float), **step_current**(current value in Amps which each step will go down by, float), **step_delay**(delay in seconds after each step before next step down, float), **off_current**(current in Amps below which test will stop, float), **ocp_voltage**(value in Volts above voltage has to rise for successful test, float), **max_overcurrent**(max current value in Amps at which OCP has to disengage at for successful test, float), **min_overcurrent**(min current value in Amps at which OCP has to disengage at for successful test, float)
 ```
 ocpList = OCPList(1, 10, 4, 20, 15, 1, 1, 5, 30, 10.52, 8.34)
 ```
@@ -564,7 +564,7 @@ The OPPList class represents all values required for using the OPP function of t
 
 It consists of the following values: 
 
-save-slot(in which save-slot 1-10 the list will be saved in, int), on_voltage(voltage above which test will start in Volts, float), on_delay(delay in seconds after reaching on_voltage after which test starts, float), current_range(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), initial_power(power at which test starts out in Watts, float), step_power(power value in Watts which each step will go down by, float), step_delay(delay in seconds after each step before next step down, float), off_power(power in Watts below which test will stop, float), opp_voltage(value in Volts above voltage has to rise for successful test, float), max_overpower(max power value in Watts at which OPP has to disengage at for successful test, float), min_overpower(min power value in Watts at which OPP has to disengage at for successful test, float)
+**save-slot**(in which save-slot 1-10 the list will be saved in, int), **on_voltage**(voltage above which test will start in Volts, float), **on_delay**(delay in seconds after reaching on_voltage after which test starts, float), **current_range**(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), **initial_power**(power at which test starts out in Watts, float), **step_power**(power value in Watts which each step will go down by, float), **step_delay**(delay in seconds after each step before next step down, float), **off_power**(power in Watts below which test will stop, float), **opp_voltage**(value in Volts above voltage has to rise for successful test, float), **max_overpower**(max power value in Watts at which OPP has to disengage at for successful test, float), **min_overpower**(min power value in Watts at which OPP has to disengage at for successful test, float)
 ```
 oppList = OPPList(1, 10, 4, 20, 15, 1, 1, 5, 30, 10.52, 8.34)
 ```
@@ -588,7 +588,7 @@ The BattList class represents all values required for using the Battery test fun
 
 It consists of the following values: 
 
-save-slot(in which save-slot 1-10 the list will be saved in, int), current_range(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), discharge_current(current in Amps at which the battery will be discharged at, float), cutoff_voltage(voltage in Volts at which test will stop, float), cutoff_capacity(capacity in AH at which test will stop, float), cutoff_time(time in minutes after which the test will stop, float)
+**save-slot**(in which save-slot 1-10 the list will be saved in, int), **current_range**(the limit up to which value the current can be set in Amps, Lists are not restricted by limits set in settings, float), **discharge_current**(current in Amps at which the battery will be discharged at, float), **cutoff_voltage**(voltage in Volts at which test will stop, float), **cutoff_capacity**(capacity in AH at which test will stop, float), **cutoff_time**(time in minutes after which the test will stop, float)
 ```
 battList = BattList(1, 20.23, 10, 10, 30, 5)
 ```
@@ -618,7 +618,7 @@ The CVList class represents all values required for using the constant voltage d
 
 It consists of the following values: 
 
-voltage1(first voltage value in Volts, float), voltage2(second voltage in Volts, float), frequency(frequency in Hz at which voltage switching will perform full cycle, float), duty_cycle(portion in % the second voltage will be in use, float)
+**voltage1**(first voltage value in Volts, float), **voltage2**(second voltage in Volts, float), **frequency**(frequency in Hz at which voltage switching will perform full cycle, float), **duty_cycle**(portion in % the second voltage will be in use, float)
 ```
 dyn1List = CVList(30.02, 20.05, 1.5, 30)
 ```
@@ -642,7 +642,7 @@ The CCList class represents all values required for using the constant current d
 
 It consists of the following values: 
 
-slope1(rate at which current will rise to first value in A/uS, float), slope2(rate at which current will rise to second value in A/uS, float), current1(first current value in Amps, float), current2(second current in Amps, float), frequency(frequency in Hz at which current switching will perform full cycle, float), duty_cycle(portion in % the second current will be in use, float)
+**slope1**(rate at which current will rise to first value in A/uS, float), **slope2**(rate at which current will rise to second value in A/uS, float), **current1**(first current value in Amps, float), **current2**(second current in Amps, float), **frequency**(frequency in Hz at which current switching will perform full cycle, float), **duty_cycle**(portion in % the second current will be in use, float)
 ```
 dyn2List = CCList(0.4, 0.5, 5, 6, 3, 40)
 ```
@@ -666,7 +666,7 @@ The CRList class represents all values required for using the constant resistanc
 
 It consists of the following values: 
 
-resistance1(first resistance value in Ohms, float), resistance2(second resistance in Ohms, float), frequency(frequency in Hz at which resistance switching will perform full cycle, float), duty_cycle(portion in % the second resistance will be in use, float)
+**resistance1**(first resistance value in Ohms, float), **resistance2**(second resistance in Ohms, float), **frequency**(frequency in Hz at which resistance switching will perform full cycle, float), **duty_cycle**(portion in % the second resistance will be in use, float)
 ```
 dyn3List = CRList(30.02, 20.05, 1.5, 30)
 ```
@@ -690,7 +690,7 @@ The CWList class represents all values required for using the constant power dyn
 
 It consists of the following values: 
 
-power1(first power value in Watts, float), power2(second power in Watts, float), frequency(frequency in Hz at which power switching will perform full cycle, float), duty_cycle(portion in % the second power will be in use, float)
+**power1**(first power value in Watts, float), **power2**(second power in Watts, float), **frequency**(frequency in Hz at which power switching will perform full cycle, float), **duty_cycle**(portion in % the second power will be in use, float)
 ```
 dyn4List = CWList(6, 9, 3, 40)
 ```
@@ -714,7 +714,7 @@ The PulseList class represents all values required for using the pulse dynamic m
 
 It consists of the following values: 
 
-slope1(rate at which current will rise to first value in A/uS, float), slope2(rate at which current will rise to second value in A/uS, float), current1(first current in Amps, float), current2(second current in Amps, float),duration(duration in seconds the second current value will stay on after receiving trigger, float)
+**slope1**(rate at which current will rise to first value in A/uS, float), **slope2**(rate at which current will rise to second value in A/uS, float), **current1**(first current in Amps, float), **current2**(second current in Amps, float),**duration**(duration in seconds the second current value will stay on after receiving trigger, float)
 ```
 dyn5List = PulseList(0.3, 0.2, 4, 6, 5)
 ```
@@ -738,7 +738,7 @@ The ToggleList class represents all values required for using the toggle dynamic
 
 It consists of the following values: 
 
-slope1(rate at which current will rise to first value in A/uS, float), slope2(rate at which current will rise to second value in A/uS, float), current1(first current in Amps, float), current2(second current in Amps, float)
+**slope1**(rate at which current will rise to first value in A/uS, float), **slope2**(rate at which current will rise to second value in A/uS, float), **current1**(first current in Amps, float), **current2**(second current in Amps, float)
 ```
 dyn6List = ToggleList(0.3, 0.2, 4, 6)
 ```
