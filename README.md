@@ -817,10 +817,10 @@ print("First Value: ", state.a)
 print("Second Value: ", state.b)
 ```
 
-The following rates are included:
+The following states are included:
 ```
-off = (0, "OFF")
-on = (1, "ON")
+off = (0, "OFF", "0")
+on = (1, "ON", "1")
 ```
 ___
 ___

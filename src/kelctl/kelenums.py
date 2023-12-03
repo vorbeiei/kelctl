@@ -42,5 +42,6 @@ class OnOffState(MultiValueEnum):
 
     This could just as easily be done as a Boolean, but is explicit.
     """
-    off = (0, "OFF")
-    on = (1, "ON")
+    _init_ = 'a b c'
+    off = (0, "OFF", "0")
+    on = (1, "ON", "1")
