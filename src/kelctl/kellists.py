@@ -68,7 +68,7 @@ class OCPList(object):
     def validate(self):
         if 1 > self.save_slot > 10:
             raise ValueError("save-slot can only be from 1-10")
-        if self.initial_current >= self.current_range:
+        if self.initial_current > self.current_range:
             raise ValueOutOfLimitError(self.initial_current, self.current_range,
                                        "Current values must be below current range")
         if self.initial_current <= self.max_overcurrent:
