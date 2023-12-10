@@ -626,9 +626,10 @@ dyn1List = CVList(30.02, 20.05, 1.5, 30)
 
 #### `validate` function
 
-This function will validate a CVList to make sure that voltage values are below limit in settings and that the duty cycle is below 100%.
+This function will validate a CVList to make sure that voltage values are below provided limit value and that the duty cycle is below 100%.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
-`dyn1List.validate()`
+Needs a **limit**(value in volts, float) as argument to compare against. Typically, limit should just be the set device limit.
+`dyn1List.validate(20.23)`
 
 
 #### `__str__` function
@@ -650,9 +651,10 @@ dyn2List = CCList(0.4, 0.5, 5, 6, 3, 40)
 
 #### `validate` function
 
-This function will validate a CCList to make sure that current values are below limit in settings and that the duty cycle is below 100%.
+This function will validate a CCList to make sure that current values are below provided limit value and that the duty cycle is below 100%.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
-`dyn2List.validate()`
+Needs a **limit**(value in amps, float) as argument to compare against. Typically, limit should just be the set device limit.
+`dyn2List.validate(20.12)`
 
 
 #### `__str__` function
@@ -674,9 +676,10 @@ dyn3List = CRList(30.02, 20.05, 1.5, 30)
 
 #### `validate` function
 
-This function will validate a CRList to make sure that resistance values are below limit in settings and that the duty cycle is below 100%.
+This function will validate a CRList to make sure that resistance values are below provided limit value and that the duty cycle is below 100%.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
-`dyn3List.validate()`
+Needs a **limit**(value in Ohms, float) as argument to compare against. Typically, limit should just be the set device limit.
+`dyn3List.validate(20.56)`
 
 
 #### `__str__` function
@@ -698,9 +701,10 @@ dyn4List = CWList(6, 9, 3, 40)
 
 #### `validate` function
 
-This function will validate a CWList to make sure that power values are below limit in settings and that the duty cycle is below 100%.
+This function will validate a CWList to make sure that power values are below provided limit value and that the duty cycle is below 100%.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
-`dyn4List.validate()`
+Needs a **limit**(value in watts, float) as argument to compare against. Typically, limit should just be the set device limit.
+`dyn4List.validate(20.87)`
 
 
 #### `__str__` function
@@ -722,9 +726,10 @@ dyn5List = PulseList(0.3, 0.2, 4, 6, 5)
 
 #### `validate` function
 
-This function will validate a PulseList to make sure that current values are below limit in settings.
+This function will validate a PulseList to make sure that current values are below provided limit value.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
-`dyn5List.validate()`
+Needs a **limit**(value in amps, float) as argument to compare against. Typically, limit should just be the set device limit.
+`dyn5List.validate(20.34)`
 
 
 #### `__str__` function
@@ -746,9 +751,10 @@ dyn6List = ToggleList(0.3, 0.2, 4, 6)
 
 #### `validate` function
 
-This function will validate a ToggleList to make sure that current values are below limit in settings.
+This function will validate a ToggleList to make sure that current values are below provided limit value.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
-`dyn6List.validate()`
+Needs a **limit**(value in amps, float) as argument to compare against. Typically, limit should just be the set device limit.
+`dyn6List.validate(20.47)`
 
 
 #### `__str__` function
