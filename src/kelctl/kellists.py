@@ -39,6 +39,8 @@ class LoadList(object):
         for s in self.steps:
             if s.current > self.current_range:
                 raise ValueOutOfLimitError(s.current, self.current_range, "current set is out of current range")
+            if s.current_slope > 1.5:
+                raise ValueOutOfLimitError(s.current_slope, 1.5, "current slope is over device limit")
 
 
 class OCPList(object):
@@ -180,6 +182,8 @@ class CCList(object):
             raise ValueOutOfLimitError(max(self.current2, self.current1), limit, "current value out of set limits")
         if self.duty_cycle >= 100:
             raise ValueOutOfLimitError(self.duty_cycle, 100, "duty cycle must be below 100%")
+        if self.slope1 > 1.5:
+            raise ValueOutOfLimitError(max(self.slope1, self.slope2), 1.5, "current slope is over device limit")
 
 
 class CRList(object):
@@ -241,6 +245,8 @@ class PulseList(object):
     def validate(self, limit: float):
         if self.current2 > limit < self.current1:
             raise ValueOutOfLimitError(max(self.current2, self.current1), limit, "current value out of set limits")
+        if self.slope1 > 1.5:
+            raise ValueOutOfLimitError(max(self.slope1, self.slope2), 1.5, "current slope is over device limit")
 
 
 class ToggleList(object):
@@ -259,3 +265,5 @@ class ToggleList(object):
     def validate(self, limit: float):
         if self.current2 > limit < self.current1:
             raise ValueOutOfLimitError(max(self.current2, self.current1), limit, "current value out of set limits")
+        if self.slope1 > 1.5:
+            raise ValueOutOfLimitError(max(self.slope1, self.slope2), 1.5, "current slope is over device limit")

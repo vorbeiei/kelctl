@@ -524,7 +524,7 @@ testlist = LoadList(3, 10, steps, 6)
 
 ### `validate` function
 
-This function will validate a LoadList to make sure that the save-slot is between 1 and 7, that there are a maximum of 84 steps and that current values are within set range.
+This function will validate a LoadList to make sure that the save-slot is between 1 and 7, that there are a maximum of 84 steps, that current values are within set range and current slope values are below device limit.
 Will raise ValueError or [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
 `testlist.validate()`
 
@@ -651,7 +651,7 @@ dyn2List = CCList(0.4, 0.5, 5, 6, 3, 40)
 
 #### `validate` function
 
-This function will validate a CCList to make sure that current values are below provided limit value and that the duty cycle is below 100%.
+This function will validate a CCList to make sure that current values are below provided limit value, that the duty cycle is below 100% and current slope values are below device limit.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
 Needs a **limit**(value in amps, float) as argument to compare against. Typically, limit should just be the set device limit.
 `dyn2List.validate(20.12)`
@@ -726,7 +726,7 @@ dyn5List = PulseList(0.3, 0.2, 4, 6, 5)
 
 #### `validate` function
 
-This function will validate a PulseList to make sure that current values are below provided limit value.
+This function will validate a PulseList to make sure that current values are below provided limit value and current slope values are below device limit.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
 Needs a **limit**(value in amps, float) as argument to compare against. Typically, limit should just be the set device limit.
 `dyn5List.validate(20.34)`
@@ -751,7 +751,7 @@ dyn6List = ToggleList(0.3, 0.2, 4, 6)
 
 #### `validate` function
 
-This function will validate a ToggleList to make sure that current values are below provided limit value.
+This function will validate a ToggleList to make sure that current values are below provided limit value and current slope values are below device limit.
 Will raise [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
 Needs a **limit**(value in amps, float) as argument to compare against. Typically, limit should just be the set device limit.
 `dyn6List.validate(20.47)`
