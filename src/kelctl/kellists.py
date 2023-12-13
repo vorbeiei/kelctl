@@ -32,7 +32,7 @@ class LoadList(object):
         return list_string
 
     def validate(self):
-        if 1 > self.save_slot > 7:
+        if 1 > self.save_slot or self.save_slot > 7:
             raise ValueError("save-slot can only be from 1-7")
         if len(self.steps) > 84:
             raise ValueError("a maximum of 84 steps is allowed")
@@ -68,7 +68,7 @@ class OCPList(object):
         return ocp_string
 
     def validate(self):
-        if 1 > self.save_slot > 10:
+        if 1 > self.save_slot or self.save_slot > 10:
             raise ValueError("save-slot can only be from 1-10")
         if self.initial_current > self.current_range:
             raise ValueOutOfLimitError(self.initial_current, self.current_range,
@@ -108,7 +108,7 @@ class OPPList(object):
         return opp_string
 
     def validate(self):
-        if 1 > self.save_slot > 10:
+        if 1 > self.save_slot or self.save_slot > 10:
             raise ValueError("save-slot can only be from 1-10")
         if self.initial_power <= self.max_overpower:
             raise ValueError("initial power must be above max overpower")
@@ -136,7 +136,7 @@ class BattList(object):
         return batt_string
 
     def validate(self):
-        if 1 > self.save_slot > 10:
+        if 1 > self.save_slot or self.save_slot > 10:
             raise ValueError("save-slot can only be from 1-10")
         if self.discharge_current > self.current_range:
             raise ValueError("discharge current has to be lower or same as current range")
@@ -156,7 +156,7 @@ class CVList(object):
         return cv_string
 
     def validate(self, limit: float):
-        if self.voltage2 > limit < self.voltage1:
+        if self.voltage2 > limit or self.voltage1 > limit:
             raise ValueOutOfLimitError(max(self.voltage2, self.voltage1), limit, "voltage value out of set limits")
         if self.duty_cycle >= 100:
             raise ValueOutOfLimitError(self.duty_cycle, 100, "duty cycle must be below 100%")
@@ -178,7 +178,7 @@ class CCList(object):
         return cc_string
 
     def validate(self, limit: float):
-        if self.current2 > limit < self.current1:
+        if self.current2 > limit or self.current1 > limit:
             raise ValueOutOfLimitError(max(self.current2, self.current1), limit, "current value out of set limits")
         if self.duty_cycle >= 100:
             raise ValueOutOfLimitError(self.duty_cycle, 100, "duty cycle must be below 100%")
@@ -200,7 +200,7 @@ class CRList(object):
         return cr_string
 
     def validate(self, limit: float):
-        if self.resistance2 > limit < self.resistance1:
+        if self.resistance2 > limit or self.resistance1 > limit:
             raise ValueOutOfLimitError(max(self.resistance2, self.resistance1), limit,
                                        "resistance value out of set limits")
         if self.duty_cycle >= 100:
@@ -221,7 +221,7 @@ class CWList(object):
         return cw_string
 
     def validate(self, limit: float):
-        if self.power2 > limit < self.power1:
+        if self.power2 > limit or self.power1 > limit:
             raise ValueOutOfLimitError(max(self.power2, self.power1), limit, "power value out of set limits")
         if self.duty_cycle >= 100:
             raise ValueOutOfLimitError(self.duty_cycle, 100, "duty cycle must be below 100%")
@@ -243,7 +243,7 @@ class PulseList(object):
         return pulse_string
 
     def validate(self, limit: float):
-        if self.current2 > limit < self.current1:
+        if self.current2 > limit or self.current1 > limit:
             raise ValueOutOfLimitError(max(self.current2, self.current1), limit, "current value out of set limits")
         if self.slope1 > 1.5:
             raise ValueOutOfLimitError(max(self.slope1, self.slope2), 1.5, "current slope is over device limit")
@@ -263,7 +263,7 @@ class ToggleList(object):
         return toggle_string
 
     def validate(self, limit: float):
-        if self.current2 > limit < self.current1:
+        if self.current2 > limit or self.current1 > limit:
             raise ValueOutOfLimitError(max(self.current2, self.current1), limit, "current value out of set limits")
         if self.slope1 > 1.5:
             raise ValueOutOfLimitError(max(self.slope1, self.slope2), 1.5, "current slope is over device limit")
