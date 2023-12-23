@@ -132,10 +132,11 @@ class KELSerial(object):
         There are some quirky things in communication. They go here.
         """
 
-        def __init__(self, port, rate=115200, debug=False):
+        def __init__(self, port, rate=115200, debug=False, send_sleep_time=0.1):
             super(KELSerial
                   .Serial, self).__init__()
 
+            self.send_sleep_time = send_sleep_time
             self.debug = debug
             self.port = serial.Serial(port, rate, timeout=1)
 
@@ -164,17 +165,17 @@ class KELSerial(object):
             text = "%s\n" % text
             self.port.write(text.encode('ascii'))
 
-            sleep(0.1)  # may be needed, needs testing
+            sleep(self.send_sleep_time)  # may be needed, needs testing
 
         def send_receive(self, text, line_number=1):
             self.send(text)
 
             return self.read_string(line_number)
 
-    def __init__(self, port, rate: BaudRate = 115200, debug=False):
+    def __init__(self, port, rate: BaudRate = 115200, debug=False, send_sleep_time=0.1):
         super(KELSerial, self).__init__()
 
-        self.__serial = KELSerial.Serial(port, rate.b, debug)
+        self.__serial = KELSerial.Serial(port, rate.b, debug, send_sleep_time)
 
         # Memory recall/save buttons 1 through 100 -> mapped to memories 0 to 99
         self.memories = [
