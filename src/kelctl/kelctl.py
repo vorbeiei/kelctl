@@ -372,17 +372,18 @@ class KELSerial(object):
 
         self.recall_list(list_number)
         list_string = self.__serial.send_receive(":RCL:LIST?")
-
-        list_string = list_string.replace(" ", "")
+        if list_string == "":
+            raise ValueError("No saved data in slot")
+        list_string = list_string.replace(" ", "").replace("A/uS", "").replace("S", "").replace("A", "")
 
         split_string = list_string.split(",")
-        current_range = float(split_string[0][0:6])
+        current_range = float(split_string[0])
         loop_number = int(split_string[-1])
         split_string = split_string[2:-1]
         steps = []
         count = int(len(split_string) / 3)
         for s in range(count):
-            steps.append(ListStep(float(split_string.pop(0)[0:5]), float(split_string.pop(0)[0:5]), float(split_string.pop(0)[0:5])))
+            steps.append(ListStep(float(split_string.pop(0)), float(split_string.pop(0)), float(split_string.pop(0))))
 
         return LoadList(list_number, current_range, steps, loop_number)
 
