@@ -524,7 +524,7 @@ testlist = LoadList(3, 10, steps, 6)
 
 ### `validate` function
 
-This function will validate a LoadList to make sure that the save-slot is between 1 and 7, that there are a maximum of 84 steps, that current values are within set range and current slope values are below device limit.
+This function will validate a LoadList to make sure that the save-slot is between 1 and 7, that there are a maximum of 84 steps, a minimum of 2 steps, that current values are within set range and current slope values are below device limit.
 Will raise ValueError or [ValueOutOfLimitError](#valueoutoflimiterror-class) if validation failed.
 `testlist.validate()`
 

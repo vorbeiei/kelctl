@@ -365,7 +365,7 @@ ___
 
 **Parameter Interpretation:** recall saved list 1-7 or recall values saved in that list
 
-**Command Interpretation:** First recall list with value which should be an existing store, then recall values saved in list. When values are recalled from non-existing list there is no return and recalling empty list will get error on device potentially causing issues with serial connection
+**Command Interpretation:** First recall list with value which should be an existing store, then recall values saved in list. When values are recalled from non-existing list there is no return and recalling empty list will get error on device potentially causing issues with serial connection. Same thing seems to happen on list with loop value set to less than 3.
 
 **Setup:** `:RCL:LIST 5`
 

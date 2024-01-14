@@ -36,6 +36,8 @@ class LoadList(object):
             raise ValueError("save-slot can only be from 1-7")
         if len(self.steps) > 84:
             raise ValueError("a maximum of 84 steps is allowed")
+        if len(self.steps) < 2:
+            raise ValueError("a minimum of 2 steps is required")
         for s in self.steps:
             if s.current > self.current_range:
                 raise ValueOutOfLimitError(s.current, self.current_range, "current set is out of current range")
