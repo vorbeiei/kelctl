@@ -3,7 +3,7 @@ This is a Python 3 library to provide easier means of controlling a Korad KEL103
 I would recommend, in addition to this documentation, to also check the test.py file for examples on how to use the library. Additionally more details about certain aspects on how the load works are provided in the KEL-103 protocol documentation.
 
 It uses the [aenum library](https://github.com/ethanfurman/aenum).
-The minimum required python version required is 3.10.
+The minimum required python version is 3.10.
 
 This library has been initially copied from the [py-korad-serial project](https://github.com/starforgelabs/py-korad-serial) and been modified to work with the electronic loads instead of power supplies.
 
