@@ -1,5 +1,5 @@
 # KELctl
-This is a Python 3 library to provide easier means of controlling a Korad KEL103 electronic load over a serial connection. It will probably also work with a KEL102 load but this is untested.
+This is a Python 3 library to provide easier means of controlling a Korad KEL103 electronic load over a serial connection initially created for the use with the [KELgui](https://github.com/vorbeiei/kelgui) application. It will probably also work with a KEL102 load but this is untested.
 I would recommend, in addition to this documentation, to also check the test.py file for examples on how to use the library. Additionally more details about certain aspects on how the load works are provided in the KEL-103 protocol documentation.
 
 It uses the [aenum library](https://github.com/ethanfurman/aenum).
