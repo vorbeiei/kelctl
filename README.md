@@ -22,7 +22,7 @@ The object supports the python `with` statement to release the serial
 port automatically:
 
 ```
-from KELSerial import KELSerial
+from kelctl import KELSerial
 
 with KELSerial('/dev/ttyACM0') as load:
     print("Model: ", load.model)
