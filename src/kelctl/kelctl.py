@@ -172,7 +172,7 @@ class KELSerial(object):
 
             return self.read_string(line_number)
 
-    def __init__(self, port, rate: BaudRate = 115200, debug=False, send_sleep_time=0.1):
+    def __init__(self, port, rate: BaudRate = BaudRate(115200), debug=False, send_sleep_time=0.1):
         super(KELSerial, self).__init__()
 
         self.__serial = KELSerial.Serial(port, rate.b, debug, send_sleep_time)
