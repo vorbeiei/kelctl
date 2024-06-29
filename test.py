@@ -4,7 +4,7 @@ This file is intended to give an example on how to use most of the functions pro
 
 import time
 
-from src.kelctl import *
+from src.kelctl import *  # For use with this repo and folder structure, with pypi package use   from kelctl import *
 
 with KELSerial('/dev/ttyACM0', BaudRate.R115200, True) as load:
     print("Model: ", load.model)
